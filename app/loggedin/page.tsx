@@ -1,16 +1,14 @@
-import { Button } from "@/components/ui/button";
-import { signInAction } from "@/actions/auth-action";
+
+import Tasks from "@/components/convex/Tasks";
+import UserProfile from "@/components/todosmart/user-profile";
 
 
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1>ToDo Smart</h1>
-
-      <form action={signInAction}>
-
-        <Button>Log In</Button>
-      </form>
+      <h1>YOU ARE IN</h1>
+      <UserProfile />
+      <Tasks />
     </div>
   );
 }
