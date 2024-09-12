@@ -1,14 +1,21 @@
 
 import Tasks from "@/components/convex/Tasks";
+import MobileNav from "@/components/nav/mobile-nav";
+import SideBar from "@/components/nav/side-bar";
 import UserProfile from "@/components/user-profile";
 
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1>YOU ARE IN</h1>
-      <UserProfile />
-      <Tasks />
+    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+      <SideBar />
+      <div className="flex flex-col">
+        <MobileNav />
+        <main className="flex flex-1 flex-col gap-4 p-4 lg:px-8">
+          <h1>YOU ARE IN</h1>
+
+        </main>
+      </div>
     </div>
   );
 }
