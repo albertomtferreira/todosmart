@@ -1,6 +1,6 @@
 
 import Tasks from "@/components/convex/Tasks";
-import UserProfile from "@/components/todosmart/user-profile";
+import UserProfile from "@/components/user-profile";
 
 
 export default function Home() {
