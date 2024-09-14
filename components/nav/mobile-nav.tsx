@@ -33,7 +33,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { primaryNavItems } from "@/utils";
-import UserProfile from "../user-profile";
+import UserProfile from "./user-profile";
 
 function MobileNav() {
   return (

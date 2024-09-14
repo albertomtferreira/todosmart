@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import UserProfile from "../user-profile"
+import UserProfile from "./user-profile"
 import { primaryNavItems } from "@/utils"
 
 export const description =
