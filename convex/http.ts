@@ -21,7 +21,7 @@ http.route({
           "Cache-Control":
             "public, max-age=15, stale-while-revalidate=15, stale-if-error=86400",
         },
-      },
+      }
     );
   }),
 });

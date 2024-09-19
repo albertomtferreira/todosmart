@@ -1,9 +1,6 @@
-
-import Tasks from "@/components/convex/Tasks";
 import MobileNav from "@/components/nav/mobile-nav";
 import SideBar from "@/components/nav/side-bar";
-import UserProfile from "@/components/user-profile";
-
+import TodoList from "@/components/todos/todo-list";
 
 export default function Home() {
   return (
@@ -12,8 +9,7 @@ export default function Home() {
       <div className="flex flex-col">
         <MobileNav />
         <main className="flex flex-1 flex-col gap-4 p-4 lg:px-8">
-          <h1>YOU ARE IN</h1>
-
+          <TodoList />
         </main>
       </div>
     </div>

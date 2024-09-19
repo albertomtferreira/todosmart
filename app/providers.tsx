@@ -1,17 +1,19 @@
 "use client";
-
-import { ConvexProvider, ConvexReactClient } from "convex/react";
+import { ReactNode, useMemo } from "react";
+import { ConvexProviderWithAuth, ConvexReactClient } from "convex/react";
 import { Session } from "next-auth";
 import { SessionProvider, useSession } from "next-auth/react";
-import { ReactNode, useMemo } from "react";
 
 const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
+function convexTokenFromSession(session: Session | null): string | null {
+  return session?.convexToken ?? null;
+}
 
 function useAuth() {
   const { data: session, update } = useSession();
 
-  // const convexToken = convexTokenFromSession(session);
+  const convexToken = convexTokenFromSession(session);
   return useMemo(
     () => ({
       isLoading: false,
@@ -23,10 +25,10 @@ function useAuth() {
       }) => {
         if (forceRefreshToken) {
           const session = await update();
-          return session?.convexToken ?? null;
-          // return convexTokenFromSession(session);
+
+          return convexTokenFromSession(session);
         }
-        // return convexToken;
+        return convexToken;
       },
     }),
     // We only care about the user changes, and don't want to
@@ -36,18 +38,18 @@ function useAuth() {
   );
 }
 
-export function Providers({
+export default function Providers({
   children,
-  session
+  session,
 }: {
   children: ReactNode;
   session: Session | null;
 }) {
   return (
     <SessionProvider session={session}>
-      <ConvexProvider client={convex} useAuth={useAuth}>
+      <ConvexProviderWithAuth client={convex} useAuth={useAuth}>
         {children}
-      </ConvexProvider>;
+      </ConvexProviderWithAuth>
     </SessionProvider>
-  )
+  );
 }
