@@ -14,6 +14,7 @@ export default function FiltersLabels() {
         {labels?.map((labels, id) => {
           return (
             <div
+              key={id}
               className="flex items-center justify-between space-x-2 border-b-2 p-2 border-gray-100"
             >
               <div className="flex items-center ">
@@ -23,7 +24,7 @@ export default function FiltersLabels() {
 
                 >{labels.name}</label>
               </div>
-              <DeleteLabel data={labels._id} />
+              <DeleteLabel data={labels} />
             </div>
 
           )

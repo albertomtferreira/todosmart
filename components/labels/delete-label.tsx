@@ -7,11 +7,12 @@ import { useToast } from "../ui/use-toast";
 
 export default function DeleteLabel({ data }: { data: Doc<"labels"> }) {
   const { toast } = useToast();
+  const { _id } = data
 
   const deleteLabelMutation = useMutation(api.labels.deleteLabel);
 
   const handleDeleteTodo = (e: any) => {
-    const deletedId = deleteLabelMutation({ labelID: e });
+    const deletedId = deleteLabelMutation({ labelID: _id });
     if (deletedId !== undefined) {
       toast({
         title: "🗑️ Successfully deleted",

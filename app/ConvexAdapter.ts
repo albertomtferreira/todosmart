@@ -200,12 +200,12 @@ function maybeDate(value: number | undefined) {
 function toDB<T extends object>(
   obj: T
 ): {
-  [K in keyof T]: T[K] extends Date
+    [K in keyof T]: T[K] extends Date
     ? number
     : null extends T[K]
-      ? undefined
-      : T[K];
-} {
+    ? undefined
+    : T[K];
+  } {
   const result: any = {};
   for (const key in obj) {
     const value = obj[key];

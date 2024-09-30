@@ -209,7 +209,7 @@ export default function AddTaskInline({
                         mode="single"
                         selected={field.value}
                         onSelect={field.onChange}
-                        initialFocus
+                      // initialFocus
                       />
                     </PopoverContent>
                   </Popover>
