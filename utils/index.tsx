@@ -23,12 +23,6 @@ export const primaryNavItems = [
     link: "/loggedin/filter-labels",
     icon: <Grid2X2 className="w-4 h-4" />,
   },
-  {
-    id: "my_projects",
-    name: "My Projects",
-    link: "/loggedin/projects",
-    icon: "",
-  },
 ];
 
 export const GET_STARTED_PROJECT_ID = "k179cymvcx5dss89kn66tyvfdn70w5f6";

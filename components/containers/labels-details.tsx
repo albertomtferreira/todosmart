@@ -4,13 +4,15 @@ import { useQuery } from "convex/react"
 import { Tags, } from 'lucide-react';
 import DeleteLabel from "../labels/delete-label";
 
-export default function FiltersLabels() {
+export default function LabelsDetails() {
   const labels = useQuery(api.labels.getLabels)
-
+  console.log(labels)
   return (
     <div className="xl:px-40">
       <div className="flex h-full max-h-screen flex-col gap-2">
         <h1 className="text-lg font-semibold md:text-2xl">Labels</h1>
+        {/* BUG */}
+        {/* it's mapping the same label twice */}
         {labels?.map((labels, id) => {
           return (
             <div
@@ -23,7 +25,7 @@ export default function FiltersLabels() {
 
                 >{labels.name}</label>
               </div>
-              <DeleteLabel data={labels._id} />
+              {/* <DeleteLabel data={labels._id} /> */}
             </div>
 
           )

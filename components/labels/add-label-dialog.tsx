@@ -19,7 +19,7 @@ import { Loader } from "lucide-react";
 export default function AddLabelDialog() {
   const addLabelMutation = useMutation(api.labels.createALabel);
   const [isLoading, setIsLoading] = useState(false);
-  const deleteLabelMutation = useMutation(api.labels.deleteLabel);
+
 
   const router = useRouter();
   const { toast } = useToast();
@@ -31,8 +31,11 @@ export default function AddLabelDialog() {
       const labelId: Id<"labels"> | null = await addLabelMutation({ name });
 
       if (labelId != undefined) {
+        // BUG
+        // It's showing the labelId on the address bar. When removed the ${label} the form box does not fade!
+
         router.push(`/loggedin/filter-labels/${labelId}`);
-        // document.getElementById("closeDialog")?.click();
+        // router.push(`/loggedin/filter-labels/`);
 
         toast({
           title: "😎 Successfully created a Label!",

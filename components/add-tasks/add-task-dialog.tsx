@@ -49,7 +49,7 @@ export default function AddTaskDialog({ data }: { data: Doc<"todos"> }) {
       },
       {
         labelName: "Due date",
-        value: format(dueDate || new Date(), "MMM dd yyyy"),
+        value: format(dueDate || new Date(), "dd MMM yyyy"),
         icon: <Calendar className="w-4 h-4 text-primary capitalize" />,
       },
       {

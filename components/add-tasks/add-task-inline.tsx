@@ -310,6 +310,8 @@ export default function AddTaskInline({
                 Cancel
               </Button>
               <Button className="px-6" type="submit">
+                {/* BUG */}
+                {/* Open AI related error about quota */}
                 Add task
               </Button>
             </div>

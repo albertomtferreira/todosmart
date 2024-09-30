@@ -69,6 +69,7 @@ export const deleteLabel = mutation({
     labelID: v.id("labels"),
   },
   handler: async (ctx, { labelID }) => {
+    console.log(labelID);
     try {
       const userId = await handleUserId(ctx);
       if (userId) {

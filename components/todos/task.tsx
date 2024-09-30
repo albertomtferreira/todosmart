@@ -38,7 +38,7 @@ export default function Task({
               className={clsx(
                 "w-5 h-5 rounded-xl",
                 isCompleted &&
-                  "data-[state=checked]:bg-gray-300 border-gray-300"
+                "data-[state=checked]:bg-gray-300 border-gray-300"
               )}
               checked={isCompleted}
               onCheckedChange={handleOnChange}

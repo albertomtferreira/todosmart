@@ -251,6 +251,7 @@ export const createTodoAndEmbeddings = action({
     { taskName, description, priority, dueDate, projectId, labelId }
   ) => {
     const embedding = await getEmbeddingsWithAI(taskName);
+
     await ctx.runMutation(api.todos.createATodo, {
       taskName,
       description,
